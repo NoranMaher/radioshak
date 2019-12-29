@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
-	public catProduct: Product[] = [];
+	public products: Product[] = [];
   public allproducts: Product[] = [];
   categories: Category[] = [];
   selectedCategory : string = "temp";
@@ -41,9 +41,9 @@ export class CategoriesComponent implements OnInit {
 			var catProducts = this.allproducts.filter(function(p) {
 				return p.categoryID == id;
 			});
-			this.catProduct = catProducts;
-		console.log(this.catProduct);
-		return this.catProduct;
+			this.products = catProducts;
+		console.log(this.products);
+		return this.products;
 	}
 
 	fetchData(id: number = null) {
@@ -51,10 +51,10 @@ export class CategoriesComponent implements OnInit {
 			return this.setProductData(products, id);
 		});
 
-		return this.allproducts;
+		return this.products;
 	}
 	ngOnDestroy() {
-		this.catProduct = [];
+		this.products = [];
 		this.allproducts = [];
 		this.service.unsubscribe();
 	}

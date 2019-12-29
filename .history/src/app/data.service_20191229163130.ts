@@ -11,8 +11,8 @@ import { pipe } from '@angular/core/src/render3/pipe';
 })
 export class DataService {
 	
-    private searchChanged = new Subject<any>();
-	// @Output() searchChanged: EventEmitter<any> = new EventEmitter();
+    private searchChanged = new Subject();
+	@Output() searchChanged: EventEmitter<any> = new EventEmitter();
 	constructor(private http: HttpClient) {}
 
 
@@ -49,10 +49,7 @@ export class DataService {
 
 		
 		console.log('selectedProd', selectedProd);
-		this.searchChanged.next(selectedProd);
+		this.searchChanged.emit(selectedProd);
 		// return selectedProd;
 	}
-	getSearchSub(): Subject<Array<any>>{
-        return this.searchChanged;
-    }
 }

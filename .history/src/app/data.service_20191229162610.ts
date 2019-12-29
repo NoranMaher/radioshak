@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter, Output} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of, Subject  } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Product } from './product';
 import { Category } from './category';
@@ -10,9 +10,7 @@ import { pipe } from '@angular/core/src/render3/pipe';
 	providedIn: 'root'
 })
 export class DataService {
-	
-    private searchChanged = new Subject<any>();
-	// @Output() searchChanged: EventEmitter<any> = new EventEmitter();
+	@Output() searchChanged: EventEmitter<any> = new EventEmitter();
 	constructor(private http: HttpClient) {}
 
 
@@ -49,10 +47,7 @@ export class DataService {
 
 		
 		console.log('selectedProd', selectedProd);
-		this.searchChanged.next(selectedProd);
+		this.searchChanged.emit(selectedProd);
 		// return selectedProd;
 	}
-	getSearchSub(): Subject<Array<any>>{
-        return this.searchChanged;
-    }
 }

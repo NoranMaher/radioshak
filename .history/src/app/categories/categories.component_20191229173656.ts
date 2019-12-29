@@ -51,7 +51,7 @@ export class CategoriesComponent implements OnInit {
 			return this.setProductData(products, id);
 		});
 
-		return this.allproducts;
+		return this.catProduct;
 	}
 	ngOnDestroy() {
 		this.catProduct = [];

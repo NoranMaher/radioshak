@@ -26,6 +26,7 @@ export class ProductsComponent implements OnInit {
     
     this.sub = this.dataService.getSearchSub().subscribe(
       productList => {
+        console.log(productList)
         this.products =	productList;
       }
     );

@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './/app-routing.module';
-import { CategoriesModule } from './categories/categories.module';
+import { CategoriesComponent } from './categories/categories.component';
 import { SearchComponent } from './_partials/search/search.component';
 import { CardModule } from './_partials/card/card.module';
 import { SliderComponent } from './_partials/slider/slider.component';
@@ -13,13 +13,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipe } from './filter.pipe';
 
 @NgModule({
-	declarations: [ AppComponent, SearchComponent, SliderComponent, FilterPipe ],
+	declarations: [ AppComponent, CategoriesComponent, SearchComponent, SliderComponent, FilterPipe ],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		HttpClientModule,
-    BrowserAnimationsModule,
-    CategoriesModule,
+		BrowserAnimationsModule,
     FormsModule,
     CardModule,
 		NgbModule.forRoot()

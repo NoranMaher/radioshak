@@ -3,7 +3,6 @@ import { DataService } from '../data.service';
 import { Product } from '../product';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs/operators';
 
 @Component({
 	selector: 'app-products',
@@ -22,13 +21,8 @@ export class ProductsComponent implements OnInit {
 	constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) {}
 
 	ngOnInit() {
-    this.fetchData();
-    
-    this.sub = this.dataService.getSearchSub().subscribe(
-      productList => {
-        this.products =	productList;
-      }
-    );
+		this.fetchData();
+		this.sub = this.dataService.searchChanged.subscribe();
 	}
 
 	setProductData(data, id) {
@@ -48,7 +42,8 @@ export class ProductsComponent implements OnInit {
 	fetchData(id: number = null) {
 		this.service = this.dataService.getProductsList().subscribe((products: Product[]) => {
 			return this.setProductData(products, id);
-    });
+		});
+
 		return this.products;
 	}
 	ngOnDestroy() {

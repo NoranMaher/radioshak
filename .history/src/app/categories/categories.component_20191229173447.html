@@ -1,12 +1,12 @@
 <ul class="categoryList">
   <li *ngFor="let category of categories">
-    <span  [routerLink]="['/categories', category.id]" (click)="fetchData(category.id)">{{category.name}}</span>
+    <span  [routerLink]="['/categories', category.id , 'products']" (click)="fetchData(category.id)">{{category.name}}</span>
   </li>
 
 </ul>
 
-<div class="cardListing" *ngIf="catProduct.length > 0">
-<div class="card" *ngFor="let product of catProduct">
+<div class="cardListing" *ngIf="products.length > 0">
+<div class="card" *ngFor="let product of products">
    <div class="card-body" >
     <img class="card-img" src="../../../assets/img/{{product.image}}.png">
     <h2 class="card-title">{{product.productTitle}}</h2>

@@ -1,13 +1,14 @@
-<ul class="categoryList">
+<ul class="categoryList" >
   <li *ngFor="let category of categories">
-    <span  [routerLink]="['/categories', category.id]" (click)="fetchData(category.id)">{{category.name}}</span>
+    <span  [routerLink]="['/categories', category.id , 'products']" (click)="fetchData(category.id)">{{category.name}}</span>
   </li>
 
 </ul>
 
-<div class="cardListing" *ngIf="catProduct.length > 0">
-<div class="card" *ngFor="let product of catProduct">
-   <div class="card-body" >
+<div *ngIf="products.length > 0">
+<div class="card" *ngFor="let product of products">
+  
+  <div class="card-body" >
     <img class="card-img" src="../../../assets/img/{{product.image}}.png">
     <h2 class="card-title">{{product.productTitle}}</h2>
     <h3 class="card-title">{{product.prodcutSubtitle}}</h3>
@@ -26,7 +27,7 @@
     <small class="card-title" *ngIf="!product.inStock"> Not available in stock</small>
 
    <br>
-    <a  [routerLink]="['/products', product.id]" class="btn btn-primary">Click for more details</a>
+    <a *ngIf="page" [routerLink]="['/products', product.id]" class="btn btn-primary">Click for more details</a>
   </div>
 
 </div>

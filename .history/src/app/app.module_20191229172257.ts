@@ -19,7 +19,7 @@ import { FilterPipe } from './filter.pipe';
 		AppRoutingModule,
 		HttpClientModule,
     BrowserAnimationsModule,
-    CategoriesModule,
+    CategoriesModule
     FormsModule,
     CardModule,
 		NgbModule.forRoot()

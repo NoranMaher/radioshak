@@ -22,13 +22,14 @@ export class ProductsComponent implements OnInit {
 	constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) {}
 
 	ngOnInit() {
-    this.fetchData();
-    
-    this.sub = this.dataService.getSearchSub().subscribe(
-      productList => {
-        this.products =	productList;
-      }
-    );
+		this.fetchData();
+    this.sub = this.dataService.searchChanged.subscribe();
+    console.log(this.sub)
+    // this.sub.map(
+    //   productList => {
+    //     this.products =	productList;
+    //   }
+    // )
 	}
 
 	setProductData(data, id) {

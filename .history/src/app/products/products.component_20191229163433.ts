@@ -24,11 +24,13 @@ export class ProductsComponent implements OnInit {
 	ngOnInit() {
     this.fetchData();
     
-    this.sub = this.dataService.getSearchSub().subscribe(
+    this.sub = this.dataService.getSearchSub().subscribe();
+    console.log(this.sub)
+    this.sub.map(
       productList => {
         this.products =	productList;
       }
-    );
+    )
 	}
 
 	setProductData(data, id) {

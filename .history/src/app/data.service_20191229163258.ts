@@ -11,7 +11,7 @@ import { pipe } from '@angular/core/src/render3/pipe';
 })
 export class DataService {
 	
-    private searchChanged = new Subject<any>();
+    private searchChanged = new Subject();
 	// @Output() searchChanged: EventEmitter<any> = new EventEmitter();
 	constructor(private http: HttpClient) {}
 

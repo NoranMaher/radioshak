@@ -22,13 +22,8 @@ export class ProductsComponent implements OnInit {
 	constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) {}
 
 	ngOnInit() {
-    this.fetchData();
-    
-    this.sub = this.dataService.getSearchSub().subscribe(
-      productList => {
-        this.products =	productList;
-      }
-    );
+		this.fetchData();
+		this.sub = this.dataService.searchChanged.subscribe();
 	}
 
 	setProductData(data, id) {
@@ -46,10 +41,17 @@ export class ProductsComponent implements OnInit {
 	}
 
 	fetchData(id: number = null) {
-		this.service = this.dataService.getProductsList().subscribe((products: Product[]) => {
-			return this.setProductData(products, id);
-    });
-		return this.products;
+		// this.service = this.dataService.getProductsList().subscribe((products: Product[]) => {
+		// 	return this.setProductData(products, id);
+    // });
+    
+    this.sub.map(
+      productList => {
+        this.products =	productList;
+      }
+    )
+
+		// return this.products;
 	}
 	ngOnDestroy() {
 		this.products = [];
