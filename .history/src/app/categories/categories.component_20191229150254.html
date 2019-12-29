@@ -1,0 +1,11 @@
+<ul class="categoryList" >
+  <li *ngFor="let category of categories">
+    <span  [routerLink]="['/categories', category.id , 'products']" (click)="fetchData(category.id)">{{category.name}}</span>
+  </li>
+
+</ul>
+
+
+<div class="card" *ngFor="let product of products">
+  <app-card [product]= product page="product-category"></app-card>
+</div>

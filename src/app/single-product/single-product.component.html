@@ -1,0 +1,13 @@
+
+
+<div class="cardListing singleProduct"  *ngIf="singleProduct">
+    <div class="card-header">
+        Poducts Details
+      </div>
+    <div class="card" style="width: 18rem;" >
+        <app-card [product] = singleProduct ></app-card>
+        </div>
+        <a (click)=goToProductsPage() class="btn btn-primary">Go Back</a>
+  
+    </div>
+  

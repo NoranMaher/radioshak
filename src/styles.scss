@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+@import 'app/variable.scss';
+@import 'app/_partials/slider/slider.component.scss';
+@import 'app/_partials/card/card.component.scss';
+
+@import 'app/categories/categories.component.scss';
+@import 'app/products/products.component.scss';
+@import 'app/single-product/single-product.component.scss';
+
+
+
+html, body { height: 100%;  background-color: $background-color;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

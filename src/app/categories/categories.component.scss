@@ -1,0 +1,25 @@
+@import 'app/variable.scss';
+
+.categoryList{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 0;
+    li{
+        background-color: $base-color;
+        width:calc((100% / 6) - 0.25rem);
+        transition: all 100ms;
+        &:hover{
+            background-color: $base-rev-color;
+        }
+        span{
+            line-height: 4rem;
+            color: #fff;
+            padding: 0.5rem;
+        
+        }
+    }
+}

@@ -1,0 +1,80 @@
+[
+	{
+		"id": "1",
+		"productTitle": "Game 1",
+		"prodcutSubtitle": "beautifle game for baby + 3 years",
+		"productOrder": "6",
+		"productRate": "5",
+		"isHotDeal": true,
+		"isHotSale": false,
+		"price": "3000",
+		"inStock": true,
+		"categoryID":"1",
+		"image":"product1"
+	},
+	{
+		"id": "2",
+		"productTitle": "Game 2",
+		"prodcutSubtitle": "beautifle game for baby + 3 years",
+		"productOrder": "2",
+		"productRate": "3",
+		"isHotDeal": true,
+		"isHotSale": true,
+		"price": "200",
+		"inStock": false,
+		"categoryID":"1",
+		"image":"product2"
+	},
+	{
+		"id": "3",
+		"productTitle": "Game 3",
+		"prodcutSubtitle": "beautifle game for baby + 3 years",
+		"productOrder": "1",
+		"productRate": "3",
+		"isHotDeal": false,
+		"isHotSale": false,
+		"price": "3500",
+		"inStock": true,
+		"categoryID":"3",
+		"image":"product1"
+	},
+	{
+		"id": "4",
+		"productTitle": "Game 4",
+		"prodcutSubtitle": "beautifle game for baby + 3 years",
+		"productOrder": "4",
+		"productRate": "2",
+		"isHotDeal": false,
+		"isHotSale": true,
+		"price": "160",
+		"inStock": true,
+		"categoryID":"6",
+		"image":"product2"
+	},
+	{
+		"id": "5",
+		"productTitle": "Game 5",
+		"prodcutSubtitle": "beautifle game for baby + 3 years",
+		"productOrder": "5",
+		"productRate": "4",
+		"isHotDeal": true,
+		"isHotSale": true,
+		"price": "200",
+		"inStock": true,
+		"categoryID":"2",
+		"image":"product2"
+	},
+	{
+		"id": "6",
+		"productTitle": "Game 6",
+		"prodcutSubtitle": "beautifle game for baby + 3 years",
+		"productOrder": "3",
+		"productRate": "4",
+		"isHotDeal": true,
+		"isHotSale": true,
+		"price": "200",
+		"inStock": true,
+		"categoryID":"3",
+		"image":"product3"
+	}
+]

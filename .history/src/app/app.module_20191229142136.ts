@@ -1,0 +1,42 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule }    from '@angular/common/http';
+
+import { AppComponent } from './app.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductsModule } from './products/products.module';
+import { FormsModule } from '@angular/forms';
+
+import { AppRoutingModule } from './/app-routing.module';
+import { CategoriesComponent } from './categories/categories.component';
+import { CardComponent } from './_partials/card/card.component';
+import { SearchComponent } from './_partials/search/search.component';
+import { SliderComponent } from './_partials/slider/slider.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FilterPipe } from './filter.pipe';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ProductsComponent,
+    CategoriesComponent,
+    CardComponent,
+    SearchComponent,
+    SliderComponent,
+    FilterPipe 
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    NgbModule.forRoot(),
+    ProductsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
